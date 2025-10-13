@@ -1,73 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Landing Page{% endblock %}</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Landing Page{% endblock %}</title>
+        <link rel="icon" type="image" href="/static/icon-web.png">
+        <style>
+            body {
+            height: 100vh;
+            margin: 0;
+            }
 
-    <style>
-        body {
-        height: 100vh;
-        margin: 0;
-        }
+            .navbar {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 10px 50px;
+              background-color: rgba(255, 255, 255, 0.9);
+              backdrop-filter: blur(6px);
+            }
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            .navbar-left {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+            }
+
+            .navbar-right {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+            }
+
+            .navbar a {
             display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 2em;
-            padding: 10px 50px;
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(6px);
-        }
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.4s ease-out, transform 0.4s ease-out;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: "Archivo Black", sans-serif;
+            text-shadow: 0px 0px 0.8px black;
+            }
 
-        .navbar a {
-        display: flex;
-        text-decoration: none;
-        color: #333;
-        margin-left: 20px;
-        font-weight: bold;
-        transition: color 0.4s ease-out, transform 0.5s ease-out;
-        border-radius: 5px;
-        font-size: 15px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-family: "Archivo Black", sans-serif;
-        }
+            .navbar a:hover {
+            display: flex;
+            color: green;
+            margin-left: 20px;
+            font-weight: bold;
+            transform: scale(1.1);
+            }
 
-        .navbar a:hover {
-        display: flex;
-        color: green;
-        margin-left: 20px;
-        font-weight: bold;
-        transform: scale(1.1);
-        }
-
-        .logo img {
-        width: 4em;
-        height: auto;
-        }
+            .logo img {
+            width: 4em;
+            height: auto;
+            }
 
 
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <div class="logo">
-            <img src="/static/logo.png">
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar-left">
+                <div class="logo">
+                    <img src="/static/logo.png">
+                </div>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about_us') }}">About Us</a>
+                <a href="{{ url_for('contact_us') }}">Contact Us</a>
+                <a href="{{ url_for('pricing') }}">Pricing</a>
+            </div>
+            <div class="navbar-right">
+                <a href="{{ url_for('for_tutors') }}">Become a Tutor</a>
+                <a href="{{ url_for('log_in') }}">Log In</a>
+            </div>
         </div>
-        <a href="{{ url_for('home') }}">Home</a>
-        <a href="{{ url_for('about_us') }}">About Us</a>
-        <a href="{{ url_for('contact_us') }}">Contact Us</a>
-        <a href="{{ url_for('for_tutors') }}">For Tutors</a>
-        <a href="{{ url_for('pricing') }}">Pricing</a>
-    </div>
 
-    <div>
-        {% block content %}
-        {% endblock %}
-    </div>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
 
-</body>
-</html>
+    </body>
+    </html>

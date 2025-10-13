@@ -5,9 +5,11 @@
 {% block content %}
 <head>
     <style>
-                .heading-hero {
+        .heading-hero {
+          display: flex;
           text-align: center;
           align-items: center;
+          flex-direction: column;
           margin: 10% auto;
           margin-top: 0;
           padding-top: 40px;
@@ -23,16 +25,22 @@
             line-height: 1.4;
             font-family: "Archivo Black", sans-serif;
             margin-top: 0px;
+            text-shadow: 0px 1px 20px white;
         }
 
         .heading-contents p {
         font-size: 28px;
         color: #555;
         margin-top: 10px;
+        text-shadow: 0px 1px 20px white;
         }
 
-        .banana {
-        font-size: 48px;
+        .selector {
+        display: flex;
+        justify-content: center;
+        border-radius: 20px;
+
+        width: 15%;
         }
 
     </style>
@@ -41,24 +49,22 @@
 <body>
     <div class="heading-hero">
         <div class="heading-contents">
-            <h1>
-                Online tutoring with real teachers
-                <p>
-                    Instant online tutoring - all subjects, anytime, anywhere
-                </p>
-            </h1>
+        <h1>
+            Online tutoring with real teachers
+        <p>
+            Instant online tutoring - all subjects, anytime, anywhere
+        </p>
+        </h1>
+        </div>
+        <div class="selector">
+            <form class="selector">
+                <input type="text" style="border-radius: 20px; border: 2px solid white; box-shadow: 0px 0px 10px white;
+                height: 2em; width: 100em; color: black; background: white;">
+            </form>
         </div>
     </div>
-<div class="banana">
-<p>The navbar will <strong>stick</strong> to the top when you reach its scroll position.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-</div>
-</body>
+    <div>
 
+    </div>
 {% endblock %}
+</body>
