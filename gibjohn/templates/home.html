@@ -3,68 +3,54 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<head>
-    <style>
-        .heading-hero {
-          display: flex;
-          text-align: center;
-          align-items: center;
-          flex-direction: column;
-          margin: 10% auto;
-          margin-top: 0;
-          padding-top: 40px;
-          padding-bottom: 23%;
-          background: #00c6fc;
-          background: linear-gradient(360deg, rgba(0, 198, 252, 0.92) 0%, rgba(196, 233, 255, 0.94) 65%, rgba(255, 255, 255, 1) 100%);
-          border-radius: 50px;
-        }
 
-        .heading-contents h1 {
-            color: black;
-            font-size: 48px;
-            line-height: 1.4;
-            font-family: "Archivo Black", sans-serif;
-            margin-top: 0px;
-            text-shadow: 0px 1px 20px white;
-        }
+<link rel="stylesheet" href="{{ url_for('static', filename='home-code.css') }}">
 
-        .heading-contents p {
-        font-size: 28px;
-        color: #555;
-        margin-top: 10px;
-        text-shadow: 0px 1px 20px white;
-        }
 
-        .selector {
-        display: flex;
-        justify-content: center;
-        border-radius: 20px;
-
-        width: 15%;
-        }
-
-    </style>
-</head>
-
-<body>
-    <div class="heading-hero">
-        <div class="heading-contents">
-        <h1>
-            Online tutoring with real teachers
-        <p>
-            Instant online tutoring - all subjects, anytime, anywhere
-        </p>
-        </h1>
-        </div>
-        <div class="selector">
-            <form class="selector">
-                <input type="text" style="border-radius: 20px; border: 2px solid white; box-shadow: 0px 0px 10px white;
-                height: 2em; width: 100em; color: black; background: white;">
-            </form>
-        </div>
+<div class="heading-hero">
+    <div class="heading-contents">
+    <h1>
+        Online tutoring with real teachers
+    <p>
+        Instant online tutoring - all subjects, anytime, anywhere
+    </p>
+    </h1>
     </div>
+    <div class="selector">
+        <form class="selector">
+            <input id="selector_box" onclick="selector_shadow()" type="text" style="border-radius: 20px; border: 2px solid white; box-shadow: 0px 0px 6px white;
+            height: 2em; width: 100em; color: black; background: white;">
+        </form>
+    </div>
+</div>
+
+<div class="about">
+    <h1>Start Learning in Three Steps</h1>
+</div>
+
+<div class="about-stuff">
+    <div class="images">
+    <img src="/static/about-image-1.png">
+    <p>Let us know what type of tutoring you need and when,
+            so we can find you the right matches for your needs.</p>
+    </div>
+
     <div>
-
+        <div class="images">
+        <img src="/static/about-image-2.png">
+            <p>Browse our tutors, get in touch, and book as many free meetings
+                as you need to find the tutor they click with most.
+            </p>
+        </div>
     </div>
+
+    <div>
+        <div class="images">
+        <img src="/static/about-image-3.png">
+            <p>Once you’ve found the right fit,
+                it’s time to book your lessons and start learning with MyTutor.
+            </p>
+        </div>
+    </div>
+
 {% endblock %}
-</body>
