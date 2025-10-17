@@ -18,8 +18,11 @@
     </div>
     <div class="selector">
         <form class="selector">
-            <input id="selector_box" onclick="selector_shadow()" type="text" style="border-radius: 20px; border: 2px solid white; box-shadow: 0px 0px 6px white;
-            height: 2em; width: 100em; color: black; background: white;">
+            <input id="selector_box" onclick="selector_shadow()" type="text"
+                   style="border-radius: 20px; border: 2px solid white; box-shadow: 0px 0px 6px white;
+            height: 2em; width: 100%; text-align: center;
+    align-items: center; color: #555; font-weight: bold; background: white;" placeholder="Enter your Desired Subject">
+
         </form>
     </div>
 </div>
@@ -32,25 +35,33 @@
 
     <div class="images">
         <img src="/static/about-image-1.png">
-        <h1>Share your goals</h1>
-        <p>Let us know what type of tutoring you need and when,
-                so we can find you the right matches for your needs.</p>
+        <div class="images-content">
+            <h1>Share your goals</h1>
+            <p>Let us know what type of tutoring you need and when,
+                    so we can find you the right matches for your needs.</p>
+        </div>
     </div>
 
     <div class="images">
     <img src="/static/about-image-2.png">
-        <h1>Find the perfect fit</h1>
-        <p>Browse our tutors, get in touch, and book as many free meetings
-            as you need to find the tutor they click with most.
-        </p>
+        <div class="images-content">
+            <h1>Find the perfect fit</h1>
+            <p>Browse our tutors, get in touch, and book as many free meetings
+                as you need to find the tutor they click with most.
+            </p>
+        </div>
     </div>
 
     <div class="images">
     <img src="/static/about-image-3.png">
-        <h1>Let the learning begin</h1>
-        <p>Once you’ve found the right fit,
-            it’s time to book your lessons and start learning with MyTutor.
-        </p>
+        <div class="images-content">
+            <h1>Begin Learning</h1>
+            <p>Once you’ve found the right fit,
+                it’s time to book and schedule your lessons,
+                and start learning with MyTutor.
+            </p>
+        </div>
     </div>
+</div>
 
 {% endblock %}

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Landing Page{% endblock %}</title>
         <link rel="icon" type="image" href="/static/icon-web.png">
-        <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='navbar_footer.css') }}">
     </head>
 
     <body>
@@ -28,5 +28,32 @@
             {% endblock %}
         </div>
 
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-stuff">
+                    <h3>About</h3>
+                    <ul>
+                        <li><p>banana</p></li>
+                        <li><p>animal</p></li>
+                    </ul>
+                </div>
+
+                <div class="footer-stuff">
+                    <h3>All Subjects</h3>
+                    <ul>
+                        <li><p>banana</p></li>
+                        <li><p>animal</p></li>
+                    </ul>
+                </div>
+
+                <div class="footer-stuff">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><p>banana</p></li>
+                        <li><p>animal</p></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </body>
     </html>

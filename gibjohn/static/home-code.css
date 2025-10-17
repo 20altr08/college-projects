@@ -6,7 +6,7 @@
       margin: 2em auto;
       margin-top: 0;
       padding-top: 33px;
-      padding-bottom: 30%;
+      padding-bottom: 19%;
       background: #00c6fc;
       background: linear-gradient(360deg, rgba(0, 198, 252, 0.92) 0%,
        rgba(196, 233, 255, 0.94) 65%, rgba(255, 255, 255, 1) 100%);
@@ -20,23 +20,24 @@
     font-size: 48px;
     line-height: 1.4;
     font-family: "Archivo Black", sans-serif;
-    margin-top: 0px;
-    text-shadow: 0px 1px 20px white;
+    margin-top: 18%;
     }
 
     .heading-contents p {
     font-size: 28px;
     color: #555;
     margin-top: 10px;
-    text-shadow: 0px 1px 20px white;
     font-family: "Segoe UI", Arial, sans-serif;
     }
 
     .selector {
     display: flex;
     justify-content: center;
+    text-align: center;
+    align-items: center;
     border-radius: 20px;
-    width: 15%;
+    width: 40%;
+    color: black;
     }
 
     .about {
@@ -47,12 +48,11 @@
     }
 
     .about h1 {
-    color: black;
+    color: #0098D8;
     font-size: 48px;
     line-height: 1.4;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Archivo Black", sans-serif;
     margin-top: 0px;
-    text-shadow: 0px 1px 20px white;
     padding: 10px;
     }
 
@@ -60,7 +60,6 @@
     font-size: 18px;
     color: rgba(255, 255, 255, 1);
     line-height: 1.0;
-
     font-family: "Segoe UI", Arial, sans-serif;
     }
 
@@ -68,7 +67,7 @@
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: space-in-between;
+    justify-content: space-between;
     margin: auto;
     width: 90%;
     gap: 3em;
@@ -78,17 +77,31 @@
     background: rgba(0, 198, 252, 0.92);
     width: 80%;
     border-radius: 20px;
-    padding: 5px;
+    padding: 7px;
     margin-bottom: 50px;
     box-shadow: 0px 1px 3px rgba(0, 198, 252, 0.92);
+    padding-top: 20px;
+    }
+
+    .images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 1px 20px white;
+
     }
 
     .images h1 {
     font-family: "Archivo Black", sans-serif;
-    text-shadow: 0px 1px 20px white;
+    font-size: 30px;
     }
 
     .images img {
     width: 15em;
     height: auto;
+    border-radius: 100%;
+    transition: color 0.4s ease-out, transform 0.4s ease-out, box-shadow 0.2s;
+    }
+
+    .images-content {
+    padding-left: 20px;
+    padding-right: 20px;
     }

@@ -1,0 +1,118 @@
+    body {
+    height: 100vh;
+    margin: 0;
+    background-color: #BCE8FF;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+      background-color: rgba(255, 255, 255, 1);
+      backdrop-filter: blur(6px);
+    }
+
+    .navbar-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .navbar-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .navbar-left a {
+    display: flex;
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.2s ease-out, transform 0.4s ease-out, background-color 0.4s;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: "Archivo Black", sans-serif;
+    text-shadow: 0px 0px 0.8px black;
+    padding: 5px;
+    }
+
+    .navbar-left a:hover {
+    display: flex;
+    color: white;
+    margin-left: 20px;
+    font-weight: bold;
+    transform: scale(1.1);
+    background: #499D64;
+    }
+
+    .navbar-right a {
+    display: flex;
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.2s ease-out, transform 0.4s ease-out, background-color 0.4s;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: "Archivo Black", sans-serif;
+    text-shadow: 0px 0px 0.8px black;
+    padding: 5px;
+    }
+
+    .navbar-right a:hover {
+    display: flex;
+    color: white;
+    margin-left: 20px;
+    font-weight: bold;
+    transform: scale(1.1);
+    background: #499D64;
+    }
+
+    .logo img {
+    width: 4em;
+    height: auto;
+    }
+
+    .footer {
+   bottom: 0;
+   width: 100%;
+  background: rgba(0, 198, 252, 0.92);
+   margin-top: auto;
+   margin: 0px;
+   text-align: center;
+   height: 10em;
+   box-shadow: 0px 1px 10px rgba(0, 198, 252, 0.92);
+   padding: 50px 0;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-direction: flex-start;
+      align-items: flex-start;
+      gap: 2em;
+      flex-wrap: wrap;
+      width: 89%;
+      margin: auto;
+    }
+
+    .footer-stuff h3 {
+    font-size: 28px;
+    line-height: 1.4;
+    font-family: "Archivo Black", sans-serif;
+    color: black;
+    }
+
+    .footer-stuff p {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 1);
+    }
+
+    .footer-stuff ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
