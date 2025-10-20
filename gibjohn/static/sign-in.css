@@ -1,0 +1,37 @@
+.log-in {
+    display: flex;
+}
+
+.container-login-1 {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+    width: 50%;
+    left: 0;
+    border: 2px solid black;
+}
+
+.container-login-2 {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    width: 50%;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.login-box h2{
+    color: black;
+    text-align: left;
+    font-size: 48px;
+    line-height: 1.4;
+    font-family: "Archivo Black", sans-serif;
+}
+
+.login-box-2 {
+    display: flex;
+}
+
+.login-box-2 img {
+    width: 100%;
+}

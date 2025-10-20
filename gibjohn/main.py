@@ -29,11 +29,9 @@ def pricing():
     # return render_template('pricing.html')
     return page_not_found()
 
-
-@app.route('/log_in')
+@app.route('/sign_in')
 def log_in():
-    return page_not_found()
-# return render_template('log_in.html')
+ return render_template('sign_in.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
