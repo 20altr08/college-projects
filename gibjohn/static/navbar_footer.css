@@ -51,10 +51,10 @@
     margin-left: 20px;
     font-weight: bold;
     transform: scale(1.1);
-    background: #499D64;
+    background: rgba(0, 198, 252, 0.92);
     }
 
-    .navbar-right a {
+    .navbar-right-links a {
     display: flex;
     text-decoration: none;
     color: #333;
@@ -68,13 +68,26 @@
     padding: 5px;
     }
 
-    .navbar-right a:hover {
+    .navbar-right-links a:hover {
     display: flex;
     color: white;
     margin-left: 20px;
     font-weight: bold;
     transform: scale(1.1);
     background: rgba(0, 198, 252, 0.92);
+    }
+
+    .logo-right img{
+    width: 2.5em;
+    height: auto;
+    margin-left: 1em;
+    border-radius: 100%;
+    transition: color 0.2s ease-out, transform 0.4s ease-out, box-shadow 0.2s;
+    }
+
+    .logo-right img:hover {
+    box-shadow: 0px 1px 5px rgba(136, 136, 136, 0.92);
+    transform: scale(1.1);
     }
 
     .logo img {

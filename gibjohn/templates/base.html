@@ -20,8 +20,12 @@
                 </div>
             </div>
             <div class="navbar-right">
-                <a href="{{ url_for('for_tutors') }}">Become a Tutor</a>
-                <a href="{{ url_for('sign_in') }}">Sign In</a>
+                <div class="navbar-right-links">
+                    <a href="{{ url_for('for_tutors') }}">Become a Tutor</a>
+                </div>
+                <div class="logo-right">
+                    <a href="{{ url_for('auth.sign_in') }}"> <img src="/static/pfp-placeholder.png"></a>
+                </div>
             </div>
         </div>
 

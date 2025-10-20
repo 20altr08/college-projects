@@ -8,11 +8,16 @@
                 <img src="/static/logo.png" class="logo">
                 <div class="login-box">
                     <h2>Welcome to Gibjohn</h2>
+                    <form method="POST" action="/login">
+                      <input type="text" name="username" placeholder="Username" required>
+                      <input type="password" name="password" placeholder="Password" required>
+                      <button type="submit">Sign In</button>
+                    </form>
                 </div>
             </div>
             <div class="container-login-2">
                 <div class="login-box-2">
-                    <img src="/static/tall-students-image.jpg">
+                    <img src="/static/tall-students-image.png">
                 </div>
             </div>
         </div>

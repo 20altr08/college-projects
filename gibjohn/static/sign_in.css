@@ -1,58 +1,117 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    height: 100vh;
-    margin: auto;
-    background: #6ec7ff;
-    background: linear-gradient(32deg, rgba(110, 199, 255, 1) 0%, rgba(0, 67, 252, 0.92) 100%);
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(32deg, rgba(110,199,255,1) 0%, rgba(0,67,252,0.92) 100%);
+}
+
+/* outside container */
+.log-in {
+  display: flex;
+  width: 90%;
+  max-width: 1100px;
+  height: 90vh;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 2em;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
+  inset 0 4px 20px rgba(255, 255, 255, 0.3);
+  animation: fader 2s;
+}
+
+/* left panel */
+.container-login-1 {
+  width: 50%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2.5rem;
+  border-radius: 2em;
 }
 
 .logo {
-    width: 20%;
-    padding: 20px;
-    padding-bottom: 0px;
-}
-
-.log-in {
-    display: flex;
-}
-
-.container-login-1 {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 50%;
-    background: white;
-    height: 100%;
-}
-
-.container-login-2 {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 20px;
-    width: 50%;
-    justify-content: center;
-    border: 2px solid black;
-}
-
-.login-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: white;
+  width: 150px;
+  margin-bottom: 2rem;
 }
 
 .login-box h2 {
-    padding: 20px;
-    color: black;
-    font-size: 48px;
-    line-height: 1.4;
-    font-family: "Archivo Black", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 1rem;
 }
 
-.login-box-2 {
-    display: flex;
+    @keyframes fader {
+from { opacity: 0; transform: translateY(10px)}
+to {opacity: 1; transform: translateY(0px)}
 }
 
-.login-box-2 img {
+/* rignht panel */
+.container-login-2 {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-login-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5%;
+  margin: auto;
+  box-shadow: 0px 0px 10px rgba(31, 38, 135, 0.2);
+  padding: 10px;
+}
+
+/* overlay text on the right image */
+.container-login-2::after {
+  content: "Empowering students with technology.";
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  color: white;
+  font-size: 1rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  font-weight: 500;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .log-in {
+    flex-direction: column;
+    height: auto;
+  }
+
+
+  .container-login-1,
+  .container-login-2 {
     width: 100%;
-    height: 100%;
+    height: auto;
+  }
+
+  .container-login-1 {
+    align-items: center;
+    text-align: center;
+  }
+
+  .container-login-2::after {
+    font-size: 0.9rem;
+    text-align: center;
+  }
 }
