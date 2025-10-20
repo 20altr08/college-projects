@@ -30,7 +30,7 @@ def pricing():
     return page_not_found()
 
 @app.route('/sign_in')
-def log_in():
+def sign_in():
  return render_template('sign_in.html')
 
 if __name__ == "__main__":

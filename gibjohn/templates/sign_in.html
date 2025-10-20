@@ -1,22 +1,20 @@
-{% extends "base.html" %}
-
-{% block title %}Log In Page{% endblock %}
-
-{% block content %}
-
-<link rel="stylesheet" href="{{ url_for('static', filename='sign_in.css') }}">
-
-<div class="log-in">
-    <div class="container-login-1">
-        <div class="login-box">
-            <h2>Welcome Back</h2>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign_in.css') }}">
+</head>
+    <body>
+        <div class="log-in">
+            <div class="container-login-1">
+                <img src="/static/logo.png" class="logo">
+                <div class="login-box">
+                    <h2>Welcome to Gibjohn</h2>
+                </div>
+            </div>
+            <div class="container-login-2">
+                <div class="login-box-2">
+                    <img src="/static/tall-students-image.jpg">
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="container-login-2">
-        <div class="login-box-2">
-            <img src="/static/about-image-1.png">
-        </div>
-    </div>
-</div>
-
-{% endblock %}
+    </body>
+</html>
