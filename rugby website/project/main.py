@@ -15,20 +15,14 @@ def home():
 def contact_us():
     return page_not_found(None)
 
-@main.route('/for_tutors')
-def for_tutors():
+@main.route('/about_us')
+def about_us():
     return page_not_found(None)
 
-@main.route('/pricing')
-def pricing():
+@main.route('/fixtures')
+def fixtures_page():
     return page_not_found(None)
 
 @main.route('/profile')
 def profile():
     return render_template('profile.html')
-
-# # Create and run the Flask app
-# if __name__ == "__main__":
-#     app = Flask(__name__)
-#     app.register_blueprint(main)
-#     app.run(debug=True)

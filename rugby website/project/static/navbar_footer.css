@@ -1,0 +1,35 @@
+    body {
+    min-height: 100vh;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.85);
+    background-image: url("charcoal-background.jpg");
+    background-repeat: no-repeat;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: flex-end;
+        justify-content: space-evenly;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(6px);
+        margin-top: 2em;
+        margin-bottom: 3em;
+        margin-left: 20em;
+        margin-right: 5em;
+
+    }
+
+    .navbar-links {
+        display: flex;
+        gap: 4em;
+        justify-content: flex-end;
+    }
+    
+    .navbar-links a {
+        color: black;
+        padding: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 19px;
+        font-family: "Funnel Display", sans-serif;
+    }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="2">
+    <title>Dynamic Background</title>
+    <style>
+        body {
+            background-image: url('{{ image_ }}');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .heading {
+            display: flex;
+            margin-bottom: auto;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            font-size: large;
+            color: white;
+            background: rgba(0, 0, 0, 0.658);
+            flex-direction: column;
+            text-shadow: 0px 0px 10px black;
+            border-radius: 25px;
+            box-shadow: 0px 0px 10px black;
+        }
+
+        .content {
+            display: flex;
+            padding: 15px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            box-shadow: 0px 0px 10px white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>FACTS</h1>
+        <div class="content">
+            <h1>{{ facts_ }}</h1>
+        </div>
+        <div>
+            {% for key in facted %}
+                {% if key == facts_ %}
+                    {% facted.remove[key] %}
+                {% else %}
+                    <h2> {{key}} </h2>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
