@@ -23,6 +23,14 @@ def about_us():
 def fixtures_page():
     return page_not_found(None)
 
+@main.route('/news')
+def News_page():
+    return page_not_found(None)
+
+@main.route('/the_team')
+def team_page():
+    return page_not_found(None)
+
 @main.route('/profile')
 def profile():
     return render_template('profile.html')

@@ -1,35 +1,84 @@
     body {
     min-height: 100vh;
     margin: 0;
-    background: rgba(0, 0, 0, 0.85);
-    background-image: url("charcoal-background.jpg");
-    background-repeat: no-repeat;
+    background: #272727;
+    }
+
+    .content {
+        height: 50em;
     }
 
     .navbar {
       display: flex;
-      align-items: flex-end;
-        justify-content: space-evenly;
-      background-color: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(6px);
-        margin-top: 2em;
-        margin-bottom: 3em;
-        margin-left: 20em;
-        margin-right: 5em;
+      align-items: center;
+      background-color: rgb(0, 0, 0);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        justify-content: flex-end;
+    height: auto;
+    }
 
+    .logo {
+        display: flex;
+        justify-content: flex-start;
+        width: 43%;
+    }
+
+    .logo img {
+        width: 5rem;
     }
 
     .navbar-links {
         display: flex;
-        gap: 4em;
-        justify-content: flex-end;
+        gap: 2em;
     }
     
     .navbar-links a {
-        color: black;
+        color: white;
         padding: 1em;
         font-weight: bold;
         text-decoration: none;
-        font-size: 19px;
-        font-family: "Funnel Display", sans-serif;
+        font-size: 22px;
+        font-family: "League Spartan", sans-serif;
+    }
+
+    .navbar-links a:hover {
+        color: #00a746;
+        transition: color 0.3s ;
+    }
+
+    .footer {
+        border-top: 1.5em solid black;
+        margin-bottom: 2em;
+    }
+
+    .footer-container {
+    display: flex;
+    width: 70%;
+    margin-top: 1em;
+    }
+
+    .footer-logo {
+        display: flex;
+    }
+
+    .footer-logo img{
+        width: 7rem;
+        padding: 1em;
+        margin-left: 2em;
+    }
+
+    .footer-heading {
+        font-size: 22px;
+        font-family: "League Spartan", sans-serif;
+        color: white;
+    }
+
+    .social-media img{
+        width: 2rem;
+        gap: 10px;
+    }
+
+    .social-media {
+        margin-left: 12%;
     }

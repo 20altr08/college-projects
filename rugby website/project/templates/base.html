@@ -6,54 +6,46 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='navbar_footer.css') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <div class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('main.home') }}"><img src="/static/assets/devonrfu-logo.svg"></a>
+        </div>
             <div class="navbar-links">
                 <a href="{{ url_for('main.home') }}">Home</a>
-                <a href="{{ url_for('main.about_us') }}">About Us</a>
                 <a href="{{ url_for('main.contact_us') }}">Contact Us</a>
                 <a href="{{ url_for('main.fixtures_page') }}">Fixtures</a>
-                <a href="{{ url_for('auth.signup') }}">Sign Up</a>
-                {% if current_user.is_authenticated %}
-                <a href="{{ url_for('auth.logout') }}">Logout</a>
-                {% endif %}
+                <a href="{{ url_for('main.News_page') }}">News</a>
+                <a href="{{ url_for('main.team_page') }}">Meet the Team</a>
             </div>
         </div>
 
-        <div>
+
+        <div class="content">
             {% block content %}
             {% endblock %}
         </div>
 
         <footer class="footer">
-            <div class="container">
-                <div class="footer-stuff">
-                    <h3>About</h3>
-                    <ul>
-                        <li><p>banana</p></li>
-                        <li><p>animal</p></li>
-                    </ul>
+                <div class="footer-container">
+                    <div class="footer-logo">
+                        <img src="/static/assets/devonrfu-logo.svg">
+                    </div>
+                    <div class="footer-heading">
+                        <h1>Devon RFU Colts</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel diam faucibus ipsum auctor hendrerit.
+                            Morbi consectetur viverra finibus. Sed a ligula quis ex mollis tincidunt.
+                            Nam commodo ultrices lorem, id facilisis ante ultrices sit amet.</p>
+                    </div>
                 </div>
-
-                <div class="footer-stuff">
-                    <h3>All Subjects</h3>
-                    <ul>
-                        <li><p>banana</p></li>
-                        <li><p>animal</p></li>
-                    </ul>
+                <div class="social-media">
+                    <a href="{{ url_for('main.home') }}"><img src="/static/assets/facebook-logo.svg"></a>
+                    <a href="{{ url_for('main.home') }}"><img src="/static/assets/instragram-logo.svg"></a>
+                    <a href="{{ url_for('main.home') }}"><img src="/static/assets/twitter-logo.svg"></a>
                 </div>
-
-                <div class="footer-stuff">
-                    <h3>Help</h3>
-                    <ul>
-                        <li><p>banana</p></li>
-                        <li><p>animal</p></li>
-                    </ul>
-                </div>
-            </div>
         </footer>
     </body>
     </html>
