@@ -133,36 +133,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 0 2em 0;
+}
+
+.sponsor-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 167, 70, 0.56);
+    border-radius: 10px;
+    border: 2px solid #018135;
+    width: 80%;
+    margin-bottom: 1.5em;
+}
+
+.sponsor p {
+    width: 80%;
+    text-align: center;
     margin-top: 0;
+    font-family: "Roboto Flex", sans-serif;
+    line-height: 1.5em;
+    margin-bottom: 2em;
+    font-size: clamp(1rem, 2.2vw, 20px);
 }
 
 .sponsor h1 {
     font-family: "League Spartan", sans-serif;
     /*margin-top: 1.25em;*/
     margin-bottom: 0.25em;
-    color: white;
     padding: 0.2em 0.5em 0.2em 0.5em;
-    background-color: rgba(0, 167, 70, 0.56);
-    border-radius: 10px;
-    /*box-shadow: 0 0 20px #00A7468E;*/
-    border: 2px solid #018135;
-}
-
-.sponsor-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    gap: 1em;
-    flex-wrap: wrap;
-    margin-bottom: 1em;
-}
-
-.sponsor-container img {
-    height: auto;
-    width: 20%;
-    border-radius: 10px;
-    border: 2px solid #292929FF;
 }
 
 @media (max-width: 900px) {
@@ -185,59 +186,59 @@
 }
 
 #button {transition-timing-function: ease;}
-
-@mixin white-gradient {
-	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-}
-
-$animationSpeed: 40s;
-
-// Animation
 @keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 7))}
+  0% {
+    transform: translateX(calc(-250px * 7));
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-
-// Styling
 .slider {
-	background: white;
-	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-	height: 100px;
-	margin: auto;
-	overflow:hidden;
-	position: relative;
-	width: 960px;
+  height: 150px;     /* was 100px */
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 
-	&::before,
-	&::after {
-		@include white-gradient;
-		content: "";
-		height: 100px;
-		position: absolute;
-		width: 200px;
-		z-index: 2;
-	}
+.slider::before,
+.slider::after {
+  content: "";
+  height: 150px;     /* match slider height */
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
 
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
+.slider::before {
+  left: 0;
+  top: 0;
+}
 
-	&::before {
-		left: 0;
-		top: 0;
-	}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
 
-	.slide-track {
-		animation: scroll $animationSpeed linear infinite;
-		display: flex;
-		width: calc(250px * 14);
-	}
+.slider .slide-track {
+  animation: scroll 30s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
 
-	.slide {
-		height: 100px;
-		width: 250px;
-	}
+.slider .slide {
+  height: 150px;     /* match slider height */
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider .slide img {
+  width: 150px;
+  height: 150px;     /* increase image height */
+  object-fit: cover;
 }
