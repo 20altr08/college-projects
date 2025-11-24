@@ -10,6 +10,8 @@ def create_app():
     app.config['SECRET_KEY'] = 'secret-key-goes-here'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
+    app.json.sort_keys = False
+
     db.init_app(app)
 
     # blueprint for auth routes in our app

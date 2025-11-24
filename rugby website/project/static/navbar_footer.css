@@ -1,36 +1,49 @@
     body {
     min-height: 100vh;
     margin: 0;
-    background: #272727;
+    /*background: #272727;*/
+    /*background-image: url("/static/background-image.png");*/
+    background: rgb(207, 207, 207);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     }
 
     .content {
-        height: 50em;
+        min-height: 50em;
     }
 
     .navbar {
+        display: flex;
+        justify-content: center;
+        position: sticky;
+        top: 0px;
+    }
+
+    .navbar-container {
       display: flex;
       align-items: center;
-      background-color: rgb(0, 0, 0);
-        padding-top: 5px;
-        padding-bottom: 5px;
-        justify-content: flex-end;
-    height: auto;
+      background-color: rgba(0, 0, 0, 0.81);
+        justify-content: center;
+        height: auto;
+        width: 100%;
+        padding: 0.5em;
+        backdrop-filter: blur(10px) brightness(1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.55);
     }
 
     .logo {
         display: flex;
         justify-content: flex-start;
-        width: 43%;
     }
 
     .logo img {
-        width: 5rem;
+        width: 3rem;
     }
 
     .navbar-links {
         display: flex;
-        gap: 2em;
+        justify-content: space-evenly;
     }
     
     .navbar-links a {
@@ -40,22 +53,31 @@
         text-decoration: none;
         font-size: 22px;
         font-family: "League Spartan", sans-serif;
+        &.active {
+            color: #00a746;
+        }
+        transition: color 0.3s ;
     }
 
     .navbar-links a:hover {
         color: #00a746;
-        transition: color 0.3s ;
     }
 
     .footer {
-        border-top: 1.5em solid black;
-        margin-bottom: 2em;
+        border-top: 0.5em solid rgb(41, 41, 41);
+        /*margin-bottom: 2em;*/
+        background-image: url("/static/footer-image.png");
+        background-size: cover;
+        height: auto;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .footer-container {
     display: flex;
     width: 70%;
     margin-top: 1em;
+    margin-bottom: 0;
     }
 
     .footer-logo {
@@ -74,11 +96,23 @@
         color: white;
     }
 
+    .footer-heading p {
+        margin-top: 0;
+        line-height: 1.25em;
+    }
+
+    .footer-heading h1 {
+        margin-bottom: 0;
+    }
+
     .social-media img{
         width: 2rem;
-        gap: 10px;
+        margin-top: -100%;
     }
 
     .social-media {
-        margin-left: 12%;
+        display: flex;
+        margin-left: 14%;
+        gap: 5px;
+        padding-bottom: 2em;
     }

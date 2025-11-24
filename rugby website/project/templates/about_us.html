@@ -1,2 +1,30 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='about_us.css') }}">
+    <div class="about-us">
+        <div class="section-1">
+        <img src="/static/assets/placeholder-square.svg">
+            <div class="section-1-container">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget semper ante, a tincidunt arcu. Etiam aliquam semper dapibus. Quisque vitae venenatis tortor. Morbi tincidunt urna ac ligula faucibus viverra.
+                Fusce dignissim velit ac turpis tristique, sed cursus erat pellentesque. Ut sit amet facilisis dolor. In sed risus lobortis enim iaculis cursus in in dolor. Nam urna metus, tempus ut lectus a, rhoncus viverra turpis.
+                Phasellus id felis mollis augue euismod consectetur vitae at dui. Pellentesque vitae vulputate nibh. Fusce vitae dictum tortor. Aliquam erat volutpat. Aenean feugiat diam lobortis ipsum sagittis, nec blandit nisl ullamcorper.
+                Quisque sit amet lectus vitae eros luctus fringilla.</p>
+            </div>
+        </div>
+        <div class="section-2">
+            <img src="/static/assets/placeholder-square.svg">
+            <div class="section-2-container">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget semper ante, a tincidunt arcu. Etiam aliquam semper dapibus. Quisque vitae venenatis tortor. Morbi tincidunt urna ac ligula faucibus viverra.
+                Fusce dignissim velit ac turpis tristique, sed cursus erat pellentesque. Ut sit amet facilisis dolor. In sed risus lobortis enim iaculis cursus in in dolor. Nam urna metus, tempus ut lectus a, rhoncus viverra turpis.
+                Phasellus id felis mollis augue euismod consectetur vitae at dui. Pellentesque vitae vulputate nibh. Fusce vitae dictum tortor. Aliquam erat volutpat. Aenean feugiat diam lobortis ipsum sagittis, nec blandit nisl ullamcorper.
+                Quisque sit amet lectus vitae eros luctus fringilla.</p>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

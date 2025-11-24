@@ -1,0 +1,187 @@
+.hero {
+    min-height: 93svh; /* small-viewport height */
+    background-image: url("https://devonrfu.co.uk/wp-content/uploads/2022/06/drfu-homeslide.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    /*box-shadow: 0 10px 100px black;*/
+    padding: 10px;
+    margin-top: -50px;
+    /*margin-bottom: 20px;*/
+}
+
+.container-banner {
+    display: flex;
+    margin-left: 8%;
+    flex-direction: column;
+    justify-content: center;
+    width: 42%;
+    font-family: "League Spartan", sans-serif;
+    color: white;
+    margin-bottom: 5%;
+}
+
+.container-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    margin-bottom: 0;
+}
+
+.container-banner p {
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    color: white;
+    margin-top: 0;
+    width: 80%;
+    font-family: "Roboto Flex", sans-serif;
+    line-height: 1.2em;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        justify-content: center;
+        text-align: center;
+        padding-top: 4rem;
+        background-color: rgba(255, 255, 255, 0.72);
+    }
+
+    .container-banner {
+        width: 90%;
+        margin-left: 0;
+        align-items: flex-start;
+    }
+
+    .container-banner p {
+        width: 100%;
+    }
+}
+
+
+.about {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    /*box-shadow: 0 -10px 120px black;*/
+    border-top: 0.5em solid rgb(41, 41, 41);
+    padding-top: 0.5em;
+}
+
+.about img {
+    width: 49%;
+    height: auto;
+    margin: 1em 10px;
+    /*padding: 1%;*/
+    border-radius: 10px;
+    border: 2px solid #292929FF;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    font-size: 22px;
+    color: #ffffff;
+    margin: 1em 1em 1em 1em;
+    padding: 0 1em 0 1em;
+    background-color: rgba(0, 167, 70, 0.56);
+    border-radius: 10px;
+    /*box-shadow: 0 0 20px #00A7468E;*/
+    border: 2px solid #018135;
+}
+
+.about-container h1 {
+    font-family: "League Spartan", sans-serif;
+    margin-top: 1.25em;
+    margin-bottom: 0.25em;
+}
+
+.about-container p {
+    margin-top: 0;
+    font-family: "Roboto Flex", sans-serif;
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    background-color: #00a746;
+    text-decoration: none;
+    font-family: "League Spartan", sans-serif;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding: 0.45em 0.5em 0.25em 0.5em;
+    border-radius: 20px;
+    margin-top: 0;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    border: 2px solid #018135;
+}
+
+.button:hover {
+    background-color: #018135;
+}
+
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.sponsor h1 {
+    font-family: "League Spartan", sans-serif;
+    /*margin-top: 1.25em;*/
+    margin-bottom: 0.25em;
+    color: white;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    background-color: rgba(0, 167, 70, 0.56);
+    border-radius: 10px;
+    /*box-shadow: 0 0 20px #00A7468E;*/
+    border: 2px solid #018135;
+}
+
+.sponsor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.sponsor-container img {
+    height: auto;
+    width: 20%;
+    border-radius: 10px;
+    border: 2px solid #292929FF;
+}
+
+@media (max-width: 900px) {
+    .about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-container,
+    .about img {
+        width: 90%;
+        margin: 1em 0;
+    }
+
+    .button {
+        align-self: center;
+        margin-bottom: 0.5em;
+    }
+}
+
+#button {transition-timing-function: ease;}

@@ -17,7 +17,7 @@ def contact_us():
 
 @main.route('/about_us')
 def about_us():
-    return page_not_found(None)
+    return render_template('about_us.html')
 
 @main.route('/fixtures')
 def fixtures_page():
@@ -25,11 +25,11 @@ def fixtures_page():
 
 @main.route('/news')
 def News_page():
-    return page_not_found(None)
+    return render_template('news.html')
 
-@main.route('/the_team')
+@main.route('/team')
 def team_page():
-    return page_not_found(None)
+    return render_template('team.html')
 
 @main.route('/profile')
 def profile():
