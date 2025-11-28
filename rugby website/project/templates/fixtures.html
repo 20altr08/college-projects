@@ -7,26 +7,29 @@
 
 <div class="fixtures">
     <div class="fixture-container">
-    <h1>RUGBY FIXTURES</h1>
-        <div class="container">
-            {% for fixture in fixtures %}
-                    <div class="fixture-container-2">
-                        <div class="fixture-container-clubs">
-                            <img src="/static/assets/{{ fixture.team1.logo }}"> <h1>vs</h1> <img src="/static/assets/{{ fixture.team2.logo }}">
+        {% for fixture in fixtures %}
+                <div class="fixture-container-2">
+                <p class="date">{{ fixture.date.strftime('%A %B %Y') }}</p>
+                    <div class="fixture-container-clubs">
+                        <div class="fixture-container-clubs-2">
+                            <p>{{ fixture.team1.name }}</p>
+                            <img src="/static/assets/{{ fixture.team1.logo }}">
                         </div>
-                        <div class="fixture-container-matchdetails">
-                            <p><span style="font-size: 20px; font-weight: bold">{{ fixture.team1.name }} VS {{ fixture.team2.name }}</span><br>
-                            In {{ fixture.venue }} on [{{ fixture.date.strftime('%d/%m/%Y') }}
-                            {{ fixture.time.strftime('%H:%M') }}]</p>
-    {#                        # Make if statement for fixture away#}
+
+                        <h1>{{ fixture.time.strftime('%H:%M') }}</h1>
+
+                        <div class="fixture-container-clubs-2">
+                            <img src="/static/assets/{{ fixture.team2.logo }}">
+                            <p>{{ fixture.team2.name }}</p>
                         </div>
                     </div>
-                {% endfor %}
+                    <p class="fixture-container-venue">{{ fixture.venue }}</p>
+                </div>
+            {% endfor %}
 
-            {% if fixtures|length == 0 %}
-                <p>No fixtures scheduled.</p>
-            {% endif %}
-        </div>
+        {% if fixtures|length == 0 %}
+            <p>No fixtures scheduled.</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
