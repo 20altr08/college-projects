@@ -16,6 +16,15 @@
     width: 60%;
 }
 
+.news-container-1 p {
+    margin: 1em 1em 1em 1em;
+    padding: 0 1em 0 1em;
+    background-color: rgba(0, 167, 70, 0.56);
+    border-radius: 10px;
+    /*box-shadow: 0 0 20px #00A7468E;*/
+border: 2px solid #018135;
+}
+
 .news-container-1 img {
     width: 80%;
 }

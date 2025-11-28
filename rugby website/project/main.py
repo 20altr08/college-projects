@@ -1,5 +1,8 @@
-from flask import Flask, render_template, Blueprint
-from . import db
+from flask import Flask, render_template, Blueprint, request
+from .models import Team, Fixtures, Results
+from datetime import datetime
+from datetime import date, time
+from . import db, create_app
 
 main = Blueprint('main', __name__)
 
@@ -13,15 +16,20 @@ def home():
 
 @main.route('/contact_us')
 def contact_us():
-    return page_not_found(None)
+    return render_template('contact_us.html')
 
 @main.route('/about_us')
 def about_us():
     return render_template('about_us.html')
 
+@main.route('/results')
+def results():
+    return render_template('results.html')
+
 @main.route('/fixtures')
 def fixtures_page():
-    return page_not_found(None)
+    fixtures = Fixtures.query.order_by(Fixtures.date, Fixtures.time).all()
+    return render_template('fixtures.html', fixtures=fixtures)
 
 @main.route('/news')
 def News_page():
@@ -30,6 +38,10 @@ def News_page():
 @main.route('/team')
 def team_page():
     return render_template('team.html')
+
+@main.route('/archive')
+def archive():
+    return render_template('archive.html')
 
 @main.route('/profile')
 def profile():

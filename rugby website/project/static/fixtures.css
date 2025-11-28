@@ -1,0 +1,94 @@
+.fixtures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fixtures h1 {
+    font-family: "League Spartan", sans-serif;
+    /*margin-top: 1em;*/
+    margin-bottom: 0.25em;
+    color: white;
+}
+
+.fixture-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+background: #00A755;
+background: linear-gradient(180deg, rgba(0, 167, 85, 1) 0%, rgba(0, 110, 81, 1) 100%);
+    margin: 2em 0 1em 0;
+    padding: 1em 0 1em 0;
+    border-radius: 30px;
+    border: 2px solid #018135;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.94);
+}
+
+.fixture-container-2 {
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    margin: 0 0 1em 0;
+    background-color: black;
+        /*padding: 0.25em;*/
+    border-radius: 38px;
+    border: 3px solid #272727;
+    display: grid;
+      grid-auto-columns: auto;
+      grid-template-columns: 0.4fr 0.3fr;
+      grid-template-rows: 1fr;
+      /*gap: 0px 0px; */
+      grid-template-areas:
+        "fixture-container-clubs fixture-container-matchdetails";
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      width: 40em;
+      height: auto;
+}
+
+.fixture-container-clubs {
+    display: grid;
+    grid-area: fixture-container-clubs;
+    grid-template-columns: 1fr auto 1fr;
+      grid-template-rows: 1fr;
+      gap: 0.3em;
+      grid-template-areas:
+        ". . .";
+      justify-content: center;
+    align-items: center;
+    justify-items: center;
+      /*height: 4em;*/
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
+    /*align-items: center;*/
+    /*gap: 0.5em;*/
+}
+
+.fixture-container-clubs h1 {
+    text-align: center;
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    line-height: 1.5em;
+    font-size: 3em;
+    color: white;
+    /*margin-bottom: 35px;*/
+}
+
+.fixture-container-clubs img {
+      /*width: 250px;*/
+      width: 5rem;
+      object-fit: contain;  /* shows entire image, no cropping */
+}
+
+.fixture-container-matchdetails {
+    grid-area: fixture-container-matchdetails;
+
+}
+
+.fixture-container-matchdetails p {
+    color: white;
+    font-family: "Roboto Flex", sans-serif;
+}

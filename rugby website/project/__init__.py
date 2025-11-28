@@ -8,7 +8,7 @@ def create_app():
     app = Flask(__name__)
 
     app.config['SECRET_KEY'] = 'secret-key-goes-here'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../instance/db.db'
 
     app.json.sort_keys = False
 
@@ -26,7 +26,7 @@ def create_app():
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
 
-    from .models import User
+    from .models import User, ContactMessage
 
     @login_manager.user_loader
     def load_user(user_id):

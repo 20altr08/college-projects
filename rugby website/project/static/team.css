@@ -38,10 +38,11 @@
     padding: 0 1em 0 1em;
     /*border-radius: 5%;*/
     /*padding: 0 1em 0 1em;*/
-    background-color: rgba(0, 167, 70, 0.56);
-    border-radius: 10px;
+    background: #00A755;
+    background: radial-gradient(circle, rgba(0, 167, 85, 1) 51%, rgba(0, 110, 81, 1) 100%);
     /*box-shadow: 0 0 20px #00A7468E;*/
-    border: 1px solid #018135;
+    border: 2px solid #333333;
+    border-radius: 20px;
 }
 
 .section-1-container p {

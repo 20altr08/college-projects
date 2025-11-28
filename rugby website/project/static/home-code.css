@@ -61,7 +61,7 @@
 
 .about {
     display: flex;
-    height: auto;
+    height: 50%;
     justify-content: center;
     /*box-shadow: 0 -10px 120px black;*/
     border-top: 0.5em solid rgb(41, 41, 41);
@@ -69,12 +69,13 @@
 }
 
 .about img {
-    width: 49%;
+    width: 40%;
+    margin: 2em 1em 2em 1em;
     height: auto;
-    margin: 1em 10px;
     /*padding: 1%;*/
     border-radius: 10px;
     border: 2px solid #292929FF;
+    object-fit: cover;
 }
 
 .about-container {
@@ -85,17 +86,18 @@
     width: 40%;
     font-size: 22px;
     color: #ffffff;
-    margin: 1em 1em 1em 1em;
+    margin: 2em 1em 1.4em 1em;
     padding: 0 1em 0 1em;
-    background-color: rgba(0, 167, 70, 0.56);
-    border-radius: 10px;
+    background: #00A755;
+    background: radial-gradient(circle, rgba(0, 167, 85, 1) 51%, rgba(0, 110, 81, 1) 100%);
     /*box-shadow: 0 0 20px #00A7468E;*/
-    border: 2px solid #018135;
+    border: 2px solid #333333;
+    border-radius: 20px;
 }
 
 .about-container h1 {
     font-family: "League Spartan", sans-serif;
-    margin-top: 1.25em;
+    /*margin-top: 1em;*/
     margin-bottom: 0.25em;
 }
 
@@ -110,7 +112,7 @@
     display: flex;
     justify-content: center;
     align-self: flex-start;
-    background-color: #00a746;
+    background-color: #272727;
     text-decoration: none;
     font-family: "League Spartan", sans-serif;
     align-items: center;
@@ -119,13 +121,14 @@
     padding: 0.45em 0.5em 0.25em 0.5em;
     border-radius: 20px;
     margin-top: 0;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    border: 2px solid #018135;
+    transition: background-color 0.1s ease, color 0.5s ease;
+    margin-bottom: 15px;
+    /*border: 2px solid #393939;*/
 }
 
 .button:hover {
-    background-color: #018135;
+    background-color: white;
+    color: #272727;
 }
 
 .sponsor {
@@ -142,10 +145,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 167, 70, 0.56);
-    border-radius: 10px;
-    border: 2px solid #018135;
-    width: 80%;
+    background: #00A755;
+    background: radial-gradient(circle, rgba(0, 167, 85, 1) 51%, rgba(0, 110, 81, 1) 100%);
+    /*box-shadow: 0 0 20px #00A7468E;*/
+    border: 2px solid #333333;
+    border-radius: 20px;
+    width: 87%;
     margin-bottom: 1.5em;
 }
 
@@ -209,7 +214,7 @@
   height: 150px;     /* match slider height */
   position: absolute;
   width: 200px;
-  z-index: 2;
+  /*z-index: 2;*/
 }
 
 .slider::before {
@@ -238,7 +243,16 @@
 }
 
 .slider .slide img {
-  width: 150px;
-  height: 150px;     /* increase image height */
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* shows entire image, no cropping */
+  transition: transform 0.2s ease;
+}
+
+/*.slider img {*/
+/*    transition: transform 0.3s ease;*/
+/*}*/
+
+.slider img:hover {
+    transform: scale(1.1);
 }

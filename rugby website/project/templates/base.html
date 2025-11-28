@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='navbar_footer.css') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=League+Spartan:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -19,8 +19,10 @@
                     <a href="{{ url_for('main.home') }}" id="home">Home</a>
                     <a href="{{ url_for('main.about_us') }}" id="about">About Us</a>
                     <a href="{{ url_for('main.fixtures_page') }}" id="fixtures">Fixtures</a>
-                    <a href="{{ url_for('main.News_page') }}" id="news">News</a>
-                    <a href="{{ url_for('main.team_page') }}" id="team">Meet the Team</a>
+                    <a href="{{ url_for('main.results') }}" id="results">Results</a>
+                    <a href="{{ url_for('main.archive') }}" id="archive">Archive</a>
+{#                    <a href="{{ url_for('main.News_page') }}" id="news">News</a>#}
+{#                    <a href="{{ url_for('main.team_page') }}" id="team">Meet the Team</a>#}
                     <a href="{{ url_for('main.contact_us') }}" id="contact">Contact Us</a>
                 </div>
             </div>
