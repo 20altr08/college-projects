@@ -5,63 +5,63 @@
 {% block content %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='home-code.css') }}">
+<div class="home">
+    <div class="hero">
+        <div class="container-banner">
+            <h1>The Heart of Rugby in Devon </h1>
+            <p>Bringing players, clubs and communities together to grow the game we love.
+            From grassroots to greatness, Devon RFU is at the heart of rugby in Devon.</p>
+        </div>
+    </div>
 
-<div class="hero">
-    <div class="container-banner">
-        <h1>The Heart of Rugby in Devon </h1>
-        <p>Bringing players, clubs and communities together to grow the game we love.
-        From grassroots to greatness, Devon RFU is at the heart of rugby in Devon.</p>
+    <div class="about">
+        <img src="/static/placeholder-square.svg">
+        <div class="about-container">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel diam faucibus ipsum auctor hendrerit. Morbi consectetur viverra finibus.
+            Sed a ligula quis ex mollis tincidunt. Nam commodo ultrices lorem, id facilisis ante ultrices sit amet. <br>
+            Donec placerat elit eget facilisis blandit.
+            Duis commodo risus a mauris facilisis, et luctus erat tristique.
+            Aliquam erat volutpat. Integer nec mauris ac mauris tincidunt euismod id sed dui.
+            Vivamus ultrices mi nibh, id iaculis ipsum vehicula nec. Morbi pellentesque </p>
+            <a href="{{ url_for('main.about_us') }}" class="button">Read More</a>
+        </div>
+    </div>
+
+    <div class="sponsor">
+
+        <div class="sponsor-container">
+            <h1>OUR PARTNERS</h1>
+            <p>A massive thank you to all of our partners! Our partners help us to become a better, more community minded and effective club.
+            Without our partners we couldn’t put on the Senior, Ladies or Junior matches that make such a difference to our members.</p>
+        </div>
+
+        <div class="slider">
+          <div class="slide-track">
+
+    {#          Batch 1#}
+
+            <div class="slide"><img src="https://i.pinimg.com/originals/88/31/fd/8831fd6c0c627822ed2b646a6b8b9aa0.jpg" alt="" /></div>
+            <div class="slide"><img src="https://www.pngmart.com/files/23/Popeyes-Logo-PNG-Photo.png" alt="" /></div>
+            <div class="slide"><img src="https://images.seeklogo.com/logo-png/28/2/chick-fil-a-logo-png_seeklogo-288809.png" alt="" /></div>
+            <div class="slide"><img src="https://www.logo.wine/a/logo/Jollibee/Jollibee-Logo.wine.svg" alt="" /></div>
+
+    {#          duplicate of batch 1#}
+
+            <div class="slide"><img src="https://i.pinimg.com/originals/88/31/fd/8831fd6c0c627822ed2b646a6b8b9aa0.jpg" alt="" /></div>
+            <div class="slide"><img src="https://www.pngmart.com/files/23/Popeyes-Logo-PNG-Photo.png" alt="" /></div>
+            <div class="slide"><img src="https://images.seeklogo.com/logo-png/28/2/chick-fil-a-logo-png_seeklogo-288809.png" alt="" /></div>
+            <div class="slide"><img src="https://www.logo.wine/a/logo/Jollibee/Jollibee-Logo.wine.svg" alt="" /></div>
+
+    {#          duplicate of batch 1#}
+
+           <div class="slide"><img src="https://i.pinimg.com/originals/88/31/fd/8831fd6c0c627822ed2b646a6b8b9aa0.jpg" alt="" /></div>
+            <div class="slide"><img src="https://www.pngmart.com/files/23/Popeyes-Logo-PNG-Photo.png" alt="" /></div>
+            <div class="slide"><img src="https://images.seeklogo.com/logo-png/28/2/chick-fil-a-logo-png_seeklogo-288809.png" alt="" /></div>
+            <div class="slide"><img src="https://www.logo.wine/a/logo/Jollibee/Jollibee-Logo.wine.svg" alt="" /></div>
+          </div>
+        </div>
     </div>
 </div>
-
-<div class="about">
-    <img src="/static/placeholder-square.svg">
-    <div class="about-container">
-        <h1>Lorem ipsum dolor sit amet</h1>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel diam faucibus ipsum auctor hendrerit. Morbi consectetur viverra finibus.
-        Sed a ligula quis ex mollis tincidunt. Nam commodo ultrices lorem, id facilisis ante ultrices sit amet. <br>
-        Donec placerat elit eget facilisis blandit.
-        Duis commodo risus a mauris facilisis, et luctus erat tristique.
-        Aliquam erat volutpat. Integer nec mauris ac mauris tincidunt euismod id sed dui.
-        Vivamus ultrices mi nibh, id iaculis ipsum vehicula nec. Morbi pellentesque </p>
-        <a href="{{ url_for('main.about_us') }}" class="button">Read More</a>
-    </div>
-</div>
-
-<div class="sponsor">
-
-    <div class="sponsor-container">
-        <h1>OUR PARTNERS</h1>
-        <p>A massive thank you to all of our partners! Our partners help us to become a better, more community minded and effective club.
-        Without our partners we couldn’t put on the Senior, Ladies or Junior matches that make such a difference to our members.</p>
-    </div>
-
-    <div class="slider">
-      <div class="slide-track">
-
-{#          Batch 1#}
-
-        <div class="slide"><img src="https://i.pinimg.com/originals/88/31/fd/8831fd6c0c627822ed2b646a6b8b9aa0.jpg" alt="" /></div>
-        <div class="slide"><img src="https://www.pngmart.com/files/23/Popeyes-Logo-PNG-Photo.png" alt="" /></div>
-        <div class="slide"><img src="https://images.seeklogo.com/logo-png/28/2/chick-fil-a-logo-png_seeklogo-288809.png" alt="" /></div>
-        <div class="slide"><img src="https://www.logo.wine/a/logo/Jollibee/Jollibee-Logo.wine.svg" alt="" /></div>
-
-{#          duplicate of batch 1#}
-
-        <div class="slide"><img src="https://i.pinimg.com/originals/88/31/fd/8831fd6c0c627822ed2b646a6b8b9aa0.jpg" alt="" /></div>
-        <div class="slide"><img src="https://www.pngmart.com/files/23/Popeyes-Logo-PNG-Photo.png" alt="" /></div>
-        <div class="slide"><img src="https://images.seeklogo.com/logo-png/28/2/chick-fil-a-logo-png_seeklogo-288809.png" alt="" /></div>
-        <div class="slide"><img src="https://www.logo.wine/a/logo/Jollibee/Jollibee-Logo.wine.svg" alt="" /></div>
-
-{#          duplicate of batch 1#}
-
-       <div class="slide"><img src="https://i.pinimg.com/originals/88/31/fd/8831fd6c0c627822ed2b646a6b8b9aa0.jpg" alt="" /></div>
-        <div class="slide"><img src="https://www.pngmart.com/files/23/Popeyes-Logo-PNG-Photo.png" alt="" /></div>
-        <div class="slide"><img src="https://images.seeklogo.com/logo-png/28/2/chick-fil-a-logo-png_seeklogo-288809.png" alt="" /></div>
-        <div class="slide"><img src="https://www.logo.wine/a/logo/Jollibee/Jollibee-Logo.wine.svg" alt="" /></div>
-      </div>
-    </div>
-</div>
-
 
 {% endblock %}

@@ -3,24 +3,62 @@
     flex-direction: column;
     gap: 1rem;
     font-family: "League Spartan", serif;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2em;
+    animation: fadeInOpacity 0.5s;
+}
+
+/*
+Source - https://stackoverflow.com/a
+Posted by DigitalDesignDj
+Retrieved 2025-12-01, License - CC BY-SA 3.0
+*/
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+.league {
+    flex-direction: column;
+    gap: 1rem;
+    font-family: "League Spartan", serif;
     justify-content: center;
     align-items: center;
-    margin-top: 4em;
+    animation: fadeInOpacity 0.5s;
+    display: flex;
 }
 
 .fixture-container {
-    width: 80%;
+    width: 90%;
 }
 
 .date {
     display: flex;
-    background-color: #dcdcdc;
+    background: #00A755;
+    background: linear-gradient(-128deg, rgba(0, 167, 85, 1) 0%, rgba(0, 110, 81, 1) 100%);
+    /*background-color: #dcdcdc;*/
     margin: 0 0 0 0;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 1em;
     border: 1px solid rgba(191, 191, 191, 0.8);
     font-size: 1.2em;
     font-weight: bold;
+    text-align: left;
+    color: white;
+}
+
+.fixture-container-2 {
+    display: grid;
+      grid-template-columns: 2.5fr 1fr 0.6fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+    "fixture-container-clubs fixture-container-venue .";
 }
 
 /* Container for each fixture row */
@@ -30,14 +68,17 @@
     align-items: center;
     background-color: #eaeaea;
     padding: 1rem;
+    margin: 0 0 1.5em 0;
     gap: 1rem;
     text-align: center;
     border: 1.5px solid #bfbfbf;
+    grid-area: fixture-container-clubs;
+    font-family: "Roboto Flex", serif;
 }
 
 /* Team name area (center text properly) */
 .fixture-container-clubs h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -51,15 +92,45 @@
 
 /* Logos */
 .fixtures img {
-    width: 5rem;
+    width: 3rem;
     height: auto;
     object-fit: contain;
     justify-self: center;
 }
 
 .fixture-container-venue {
+    grid-area: fixture-container-venue;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    background-color: #eaeaea;
+    border: 1.5px solid #bfbfbf;
+    padding: 1rem;
+    margin: 0 0 1.5em 0;
+    gap: 1rem;
+    font-family: "Roboto Flex", serif;
+    /*font-weight: bold;*/
+}
+
+.fixture-matchlink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaeaea;
+    border: 1.5px solid #bfbfbf;
+    padding: 1rem;
+    margin: 0 0 1.5em 0;
+    gap: 1rem;
+}
+
+.fixture-matchlink a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 15px;
+}
+
+.fixture-matchlink a:hover {
+    color: #00A755;
 }

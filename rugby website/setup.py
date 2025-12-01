@@ -84,7 +84,7 @@ def create_teams_from_logos():
 if __name__ == '__main__':
     with app.app_context():
         # Create tables if they don't exist
-        # db.drop_all()
+        db.drop_all()
         db.create_all()
         print("Tables created/verified\n")
 

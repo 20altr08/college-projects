@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}results{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='results.css') }}">
+<div class="results">
+    <div class="container">
+
+        <div class="team-1">
+            <p>{{ fixture.team1.name }}</p>
+            <img src="/static/assets/{{ fixture.team1.logo }}">
+        </div>
+
+        <div class="matchdetails">
+
+            {% if results %}
+                <h1 style="font-family: 'League Spartan', sans-serif; font-size: 5em">{{ results.team1_score }}:{{ results.team2_score }}</h1>
+            {% else %}
+                <h1 style="font-family: 'League Spartan', sans-serif; font-size: 5em">VS</h1>
+            {% endif %}
+
+            <p>{{ fixture.date.strftime('%A %B %Y') }} [{{ fixture.time.strftime('%H:%M %p') }}]</p>
+            <p>Venue: <span style="font-weight: bold">{{ fixture.venue }}</span></p>
+        </div>
+
+        <div class="team-2">
+            <img src="/static/assets/{{ fixture.team2.logo }}">
+            <p>{{ fixture.team2.name }}</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="report">
+<h1>Match Details</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed venenatis neque. Donec eleifend tempus ultrices. Donec elementum aliquet eros quis egestas. In condimentum sapien eu dui faucibus dapibus. Nam consequat dolor neque, nec finibus est laoreet id. Cras in lobortis metus, quis suscipit nulla. Integer sem odio, sagittis ac nibh id, viverra tempor libero. Cras interdum pretium mauris, non rhoncus erat tincidunt quis. Nam et ornare sem. Vestibulum hendrerit dapibus sapien non elementum. Sed quis tristique justo, at iaculis justo. Ut in auctor risus. Nunc aliquam nunc bibendum pellentesque condimentum. Maecenas ac sapien porttitor, pellentesque elit at, venenatis mi. Etiam mattis nisl odio, quis auctor elit faucibus ut. Etiam quis libero faucibus, molestie nulla consectetur, fringilla sapien.
+
+Sed quis nulla rhoncus, maximus mauris eu, sagittis nisl. Sed nec pretium odio. Proin pellentesque sagittis accumsan. Morbi sed dui ligula. Donec tellus nisi, vestibulum in lobortis a, interdum id quam. Donec ornare, neque nec tempus cursus, nisl purus placerat arcu, at pulvinar urna erat eget arcu. Morbi dictum turpis libero, nec tincidunt diam consequat ac. Nulla in ex nisl. Duis molestie laoreet dictum. Pellentesque a lacus commodo, feugiat enim sit amet, condimentum dui. Mauris vehicula gravida quam, eget faucibus diam vehicula nec. Proin et libero et dui feugiat condimentum non vel massa. Donec ac gravida dolor. Quisque id sapien fermentum, tempus felis mollis, fermentum purus. Duis laoreet aliquam auctor.
+
+Curabitur vel risus et neque ornare consequat. Vivamus eu mattis diam. Vestibulum laoreet sagittis sem, sit amet bibendum felis. Curabitur id ullamcorper justo. Nam et velit a tortor vehicula mattis non vitae eros. Vivamus bibendum sollicitudin viverra. Suspendisse potenti. Praesent in ultricies libero. Praesent aliquet ultricies convallis. Suspendisse imperdiet dolor at laoreet porttitor. Ut vitae enim vitae magna pellentesque mattis quis eu elit. Integer finibus, felis vel feugiat interdum, orci arcu efficitur lorem, et egestas tellus justo efficitur sem. Donec sodales turpis magna, nec condimentum nunc egestas nec. Suspendisse consequat est a consequat volutpat. Suspendisse posuere urna vel lorem blandit malesuada.
+
+Etiam eleifend nunc eget enim facilisis, mattis maximus leo tristique. Nam pulvinar dignissim mi, sollicitudin rutrum felis placerat et. Suspendisse eu odio nisl. Curabitur vulputate libero sit amet neque dictum efficitur. Maecenas lobortis massa vitae mattis vehicula. Vivamus condimentum arcu lorem, nec aliquam felis porttitor vel. Vestibulum quis risus vitae tortor mattis ornare. Phasellus sed eleifend eros. Mauris sit amet nisi quis lectus ornare venenatis.
+
+In rhoncus tortor ipsum, id blandit neque gravida a. Nulla orci magna, elementum quis elit ac, semper auctor mauris. Nam ullamcorper commodo ipsum quis rutrum. Etiam imperdiet turpis quis dignissim semper. Sed tempus ante mauris, in pretium arcu faucibus non. Sed ac erat felis. Morbi nec odio ultrices, porta dolor non, egestas justo. Nullam non bibendum ipsum, vitae porttitor nisl. In porta eget felis nec efficitur. Quisque et lectus est.
+        </p>
+    </div>
+
+{% endblock %}

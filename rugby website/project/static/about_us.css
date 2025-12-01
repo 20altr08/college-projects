@@ -3,6 +3,7 @@
     height: auto;
     justify-content: center;
     flex-direction: column;
+    animation: fadeInOpacity 0.5s;
 }
 
 .section-1 {

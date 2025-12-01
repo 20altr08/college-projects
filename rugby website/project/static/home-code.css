@@ -1,3 +1,7 @@
+.home {
+    animation: fadeInOpacity 0.5s;
+}
+
 .hero {
     min-height: 93svh; /* small-viewport height */
     background-image: url("https://devonrfu.co.uk/wp-content/uploads/2022/06/drfu-homeslide.jpg");

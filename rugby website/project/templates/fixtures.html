@@ -5,31 +5,50 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='fixtures.css') }}">
 
-<div class="fixtures">
-    <div class="fixture-container">
-        {% for fixture in fixtures %}
-                <div class="fixture-container-2">
+<div class="league">
+
+{# This is the fixtures#}
+    <div class="fixtures">
+    <h1>Upcoming Fixtures</h1>
+        <div class="fixture-container">
+            {% for fixture in fixtures %}
+                {% if fixture.result %}
+            <span style="color: green;">✔ Result available</span>
+                {% else %}
+                    <span style="color: red;">✘ No result yet</span>
+                {% endif %}
                 <p class="date">{{ fixture.date.strftime('%A %B %Y') }}</p>
-                    <div class="fixture-container-clubs">
-                        <div class="fixture-container-clubs-2">
-                            <p>{{ fixture.team1.name }}</p>
-                            <img src="/static/assets/{{ fixture.team1.logo }}">
+                    <div class="fixture-container-2">
+
+                        <div class="fixture-container-clubs">
+                            <div class="fixture-container-clubs-2">
+                                <p>{{ fixture.team1.name }} </p>
+                                <img src="/static/assets/{{ fixture.team1.logo }}">
+                            </div>
+
+                            <h1>{{ fixture.time.strftime('%H:%M %p') }}</h1>
+
+                            <div class="fixture-container-clubs-2">
+                                <img src="/static/assets/{{ fixture.team2.logo }}">
+                                <p>{{ fixture.team2.name }}</p>
+                            </div>
                         </div>
+                        <p class="fixture-container-venue">🏟️{{ fixture.venue }}</p>
 
-                        <h1>{{ fixture.time.strftime('%H:%M') }}</h1>
-
-                        <div class="fixture-container-clubs-2">
-                            <img src="/static/assets/{{ fixture.team2.logo }}">
-                            <p>{{ fixture.team2.name }}</p>
+                        <div class="fixture-matchlink">
+                            <a href="{{ url_for('main.matchdetails', fixture_id=fixture.id) }}">Match Details ➜</a>
                         </div>
                     </div>
-                    <p class="fixture-container-venue">{{ fixture.venue }}</p>
-                </div>
-            {% endfor %}
+                {% endfor %}
 
-        {% if fixtures|length == 0 %}
-            <p>No fixtures scheduled.</p>
-        {% endif %}
+            {% if fixtures|length == 0 %}
+                <p>No fixtures scheduled.</p>
+            {% endif %}
+        </div>
     </div>
+
+{#===============================================================================#}
+
+
 </div>
 {% endblock %}

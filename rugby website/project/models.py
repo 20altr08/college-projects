@@ -26,29 +26,24 @@ class Team(db.Model):
 class Fixtures(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     venue = db.Column(db.String(100), nullable=False)
+
     date = db.Column(db.Date, nullable=False)
     time = db.Column(db.Time, nullable=False)
     away = db.Column(db.String(4), nullable=False)
+
     team1_id = db.Column(db.Integer, db.ForeignKey('team.id'), nullable=False)
     team2_id = db.Column(db.Integer, db.ForeignKey('team.id'), nullable=False)
+
     team1 = db.relationship('Team', foreign_keys=[team1_id])
     team2 = db.relationship('Team', foreign_keys=[team2_id])
     # THIS LINE IS CRUCIAL:
     result = db.relationship('Results', back_populates="fixture", uselist=False)  # one-to-one
 
-    @validates('away')
-    def uppercase_away(self, key, value):
-        return value.upper() if value else value
-
 class Results(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    fixture_id = db.Column(db.Integer, db.ForeignKey("fixtures.id"), nullable=False)
+
     team1_score = db.Column(db.Integer, nullable=False)
     team2_score = db.Column(db.Integer, nullable=False)
-    fixture_id = db.Column(db.Integer, db.ForeignKey('fixtures.id'), nullable=False)
-    won = db.Column(db.Integer, nullable=False)
-    lost = db.Column(db.Integer, nullable=False)
-    draw = db.Column(db.Integer, nullable=False)
 
-    # THIS LINE IS CRUCIAL:
-    fixture = db.relationship('Fixtures', back_populates="result")
-
+    fixture = db.relationship('Fixtures', back_populates="result", uselist=False)

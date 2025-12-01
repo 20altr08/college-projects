@@ -499,7 +499,7 @@
     </routine>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-11-25.10:12:07</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-12-01.13:50:17</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1590,55 +1590,190 @@
     <argument id="554" parent="190">
       <Position>1</Position>
     </argument>
-    <table id="555" parent="191" name="sqlite_master">
+    <table id="555" parent="191" name="contact_message"/>
+    <table id="556" parent="191" name="fixtures"/>
+    <table id="557" parent="191" name="results"/>
+    <table id="558" parent="191" name="sqlite_master">
       <System>1</System>
     </table>
-    <table id="556" parent="191" name="user"/>
-    <column id="557" parent="555" name="type">
-      <Position>1</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="558" parent="555" name="name">
-      <Position>2</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="559" parent="555" name="tbl_name">
-      <Position>3</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="560" parent="555" name="rootpage">
-      <Position>4</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="561" parent="555" name="sql">
-      <Position>5</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="562" parent="556" name="id">
+    <table id="559" parent="191" name="team"/>
+    <table id="560" parent="191" name="user"/>
+    <column id="561" parent="555" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>INTEGER|0s</StoredType>
     </column>
-    <column id="563" parent="556" name="email">
+    <column id="562" parent="555" name="firstname">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>VARCHAR(100)|0s</StoredType>
     </column>
-    <column id="564" parent="556" name="name">
+    <column id="563" parent="555" name="lastname">
       <NotNull>1</NotNull>
       <Position>3</Position>
+      <StoredType>VARCHAR(100)|0s</StoredType>
+    </column>
+    <column id="564" parent="555" name="email">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>VARCHAR(200)|0s</StoredType>
+    </column>
+    <column id="565" parent="555" name="subject">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <key id="566" parent="555">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="567" parent="556" name="id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="568" parent="556" name="venue">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>VARCHAR(100)|0s</StoredType>
+    </column>
+    <column id="569" parent="556" name="date">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>DATE|0s</StoredType>
+    </column>
+    <column id="570" parent="556" name="time">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>TIME|0s</StoredType>
+    </column>
+    <column id="571" parent="556" name="away">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>VARCHAR(4)|0s</StoredType>
+    </column>
+    <column id="572" parent="556" name="team1_id">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="573" parent="556" name="team2_id">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <foreign-key id="574" parent="556">
+      <ColNames>team1_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>team</RefTableName>
+    </foreign-key>
+    <foreign-key id="575" parent="556">
+      <ColNames>team2_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>team</RefTableName>
+    </foreign-key>
+    <key id="576" parent="556">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="577" parent="557" name="id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="578" parent="557" name="team1_score">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="579" parent="557" name="team2_score">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="580" parent="557" name="fixture_id">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <foreign-key id="581" parent="557">
+      <ColNames>fixture_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>fixtures</RefTableName>
+    </foreign-key>
+    <key id="582" parent="557">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="583" parent="558" name="type">
+      <Position>1</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="584" parent="558" name="name">
+      <Position>2</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="585" parent="558" name="tbl_name">
+      <Position>3</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="586" parent="558" name="rootpage">
+      <Position>4</Position>
+      <StoredType>INT|0s</StoredType>
+    </column>
+    <column id="587" parent="558" name="sql">
+      <Position>5</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="588" parent="559" name="id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="589" parent="559" name="name">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>VARCHAR(100)|0s</StoredType>
+    </column>
+    <column id="590" parent="559" name="logo">
+      <Position>3</Position>
+      <StoredType>VARCHAR(100)|0s</StoredType>
+    </column>
+    <key id="591" parent="559">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="592" parent="560" name="id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="593" parent="560" name="email">
+      <Position>2</Position>
+      <StoredType>VARCHAR(100)|0s</StoredType>
+    </column>
+    <column id="594" parent="560" name="password">
+      <Position>3</Position>
+      <StoredType>VARCHAR(100)|0s</StoredType>
+    </column>
+    <column id="595" parent="560" name="name">
+      <Position>4</Position>
       <StoredType>VARCHAR(1000)|0s</StoredType>
     </column>
-    <index id="565" parent="556" name="sqlite_autoindex_user_1">
+    <column id="596" parent="560" name="picture">
+      <Position>5</Position>
+      <StoredType>VARCHAR(1000)|0s</StoredType>
+    </column>
+    <index id="597" parent="560" name="sqlite_autoindex_user_1">
       <ColNames>email</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="566" parent="556">
+    <key id="598" parent="560">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="567" parent="556">
+    <key id="599" parent="560">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_user_1</UnderlyingIndexName>
     </key>

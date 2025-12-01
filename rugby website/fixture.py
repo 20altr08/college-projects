@@ -1,5 +1,5 @@
 from datetime import date, time
-from project.models import Fixtures, Team
+from project.models import Fixtures, Team, Results
 from project import db, create_app
 import random
 
@@ -62,9 +62,25 @@ def creating_fixtures():
         )
 
         db.session.add(fixture)
+
         db.session.commit()
 
-        print(f"Created fixture: {team1.name} vs {team2.name} at {fixture.venue}: {fixture.date} ({fixture.time})")
+        # team1_score = random.randint(0, 50)
+        # team2_score = random.randint(0, 50)
+        #
+        # result = Results(
+        #     fixture_id=fixture.id,
+        #     team1_score=team1_score,
+        #     team2_score=team2_score
+        # )
+        #
+        # db.session.add(result)
+        # db.session.commit()
+
+        print(
+            f"Created fixture: {team1.name} vs {team2.name} "
+            f"at {fixture.venue} — "
+        )
 
 for i in range(5):
     creating_fixtures()

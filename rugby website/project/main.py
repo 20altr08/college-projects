@@ -18,13 +18,18 @@ def home():
 def contact_us():
     return render_template('contact_us.html')
 
+@main.route('/match-details/<int:fixture_id>')
+def matchdetails(fixture_id):
+    fixture = Fixtures.query.get(fixture_id)
+    return render_template("match-details.html", fixture=fixture, results=fixture.result)
+
 @main.route('/about_us')
 def about_us():
     return render_template('about_us.html')
 
-@main.route('/results')
-def results():
-    return render_template('results.html')
+# @main.route('/results')
+# def results():
+#     return render_template('results.html')
 
 @main.route('/fixtures')
 def fixtures_page():
