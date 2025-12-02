@@ -72,6 +72,7 @@ Retrieved 2025-12-01, License - CC BY-SA 3.0
     gap: 1rem;
     text-align: center;
     border: 1.5px solid #bfbfbf;
+    border-right: 0px solid #bfbfbf;
     grid-area: fixture-container-clubs;
     font-family: "Roboto Flex", serif;
 }
@@ -105,6 +106,7 @@ Retrieved 2025-12-01, License - CC BY-SA 3.0
     align-items: center;
     background-color: #eaeaea;
     border: 1.5px solid #bfbfbf;
+    border-right: 0px solid #bfbfbf;
     padding: 1rem;
     margin: 0 0 1.5em 0;
     gap: 1rem;

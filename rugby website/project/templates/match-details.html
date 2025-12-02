@@ -20,6 +20,7 @@
             {% endif %}
 
             <p>{{ fixture.date.strftime('%A %B %Y') }} [{{ fixture.time.strftime('%H:%M %p') }}]</p>
+            <p>League: {{ fixture.league_name }}</p>
             <p>Venue: <span style="font-weight: bold">{{ fixture.venue }}</span></p>
         </div>
 

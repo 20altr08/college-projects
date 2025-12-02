@@ -80,6 +80,8 @@
         height: auto;
         background-position: center;
         background-repeat: no-repeat;
+        margin-bottom: 0;
+        position: relative;
     }
 
     .footer-container {
