@@ -36,6 +36,8 @@ class Fixtures(db.Model):
 
     team1 = db.relationship('Team', foreign_keys=[team1_id])
     team2 = db.relationship('Team', foreign_keys=[team2_id])
+
+    league_name = db.Column(db.String(100))
     # THIS LINE IS CRUCIAL:
     result = db.relationship('Results', back_populates="fixture", uselist=False)  # one-to-one
 
@@ -47,3 +49,8 @@ class Results(db.Model):
     team2_score = db.Column(db.Integer, nullable=False)
 
     fixture = db.relationship('Fixtures', back_populates="result", uselist=False)
+
+class League(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+

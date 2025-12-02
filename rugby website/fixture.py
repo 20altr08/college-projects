@@ -26,6 +26,15 @@ devon_rugby_towns = [
     "Topsham"
 ]
 
+uk_league_names = [
+    "Southern Counties League",
+    "Northern Premier Division",
+    "West Midlands Football League",
+    "Devon & Cornwall Championship",
+    "East Sussex Senior League",
+    "Greater London Premier"
+]
+
 home_away = ['away', 'home']
 
 def creating_fixtures():
@@ -37,6 +46,7 @@ def creating_fixtures():
         hour=random.randint(8, 20),
         minute=random.choice([0, 15, 30, 45])  # quarter hours
     )
+    league = random.choice(uk_league_names)
 
     with app.app_context():
         teams = Team.query.all()
@@ -58,6 +68,7 @@ def creating_fixtures():
             time=random_time,
             team1_id=team1.id,
             team2_id=team2.id,
+            league_name=league,
             away=away
         )
 
@@ -65,22 +76,26 @@ def creating_fixtures():
 
         db.session.commit()
 
-        # team1_score = random.randint(0, 50)
-        # team2_score = random.randint(0, 50)
-        #
-        # result = Results(
-        #     fixture_id=fixture.id,
-        #     team1_score=team1_score,
-        #     team2_score=team2_score
-        # )
-        #
-        # db.session.add(result)
-        # db.session.commit()
+        team1_score = random.randint(0, 50)
+        team2_score = random.randint(0, 50)
 
-        print(
-            f"Created fixture: {team1.name} vs {team2.name} "
-            f"at {fixture.venue} — "
-        )
+        repeater = random.randint(1,3)
+
+        if repeater == 1:
+            result = Results(
+                fixture_id=fixture.id,
+                team1_score=team1_score,
+                team2_score=team2_score
+            )
+            db.session.add(result)
+            db.session.commit()
+
+            print(
+                f"Created fixture: {team1.name} vs {team2.name} "
+                f"at {fixture.venue} - {team1_score} - {team2_score}")
+        else:
+            print(f"Created fixture: {team1.name} vs {team2.name} "
+                  f"at {fixture.venue}")
 
 for i in range(5):
     creating_fixtures()
