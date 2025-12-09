@@ -10,7 +10,22 @@
 
     .content {
         min-height: 50em;
-    }
+    animation: fadeInOpacity 0.5s;
+}
+
+/*
+Source - https://stackoverflow.com/a
+Posted by DigitalDesignDj
+Retrieved 2025-12-01, License - CC BY-SA 3.0
+*/
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
 
     .navbar {
         display: flex;

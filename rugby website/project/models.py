@@ -29,7 +29,6 @@ class Fixtures(db.Model):
 
     date = db.Column(db.Date, nullable=False)
     time = db.Column(db.Time, nullable=False)
-    away = db.Column(db.String(4), nullable=False)
 
     team1_id = db.Column(db.Integer, db.ForeignKey('team.id'), nullable=False)
     team2_id = db.Column(db.Integer, db.ForeignKey('team.id'), nullable=False)

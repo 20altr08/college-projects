@@ -26,7 +26,7 @@ devon_rugby_towns = [
     "Topsham"
 ]
 
-uk_league_names = [
+uk_league_names = [ "",
     "Southern Counties League",
     "Northern Premier Division",
     "West Midlands Football League",
@@ -47,6 +47,9 @@ def creating_fixtures():
         minute=random.choice([0, 15, 30, 45])  # quarter hours
     )
     league = random.choice(uk_league_names)
+
+    if league == "":
+        league = "Normal Matches"
 
     with app.app_context():
         teams = Team.query.all()
@@ -69,7 +72,6 @@ def creating_fixtures():
             team1_id=team1.id,
             team2_id=team2.id,
             league_name=league,
-            away=away
         )
 
         db.session.add(fixture)

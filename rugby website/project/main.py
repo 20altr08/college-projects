@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Blueprint, request
+from flask import Flask, render_template, Blueprint, request, redirect, url_for, session
 from .models import Team, Fixtures, Results
 from datetime import datetime
 from datetime import date, time
@@ -51,3 +51,19 @@ def archive():
 @main.route('/profile')
 def profile():
     return render_template('profile.html')
+
+@main.route("/admin", methods=["GET", "POST"])
+def admin():
+    teams = Team.query.all()  # returns full objects
+
+    if request.method == "POST":
+        # Get text from form
+        fixture = Fixtures(
+            venue=request.form['venue'],
+            date=request.form['date'],
+            time=request.form['time'],
+            team1_id=request.form['team1'],
+            team2_id=request.form['team2'],
+            league_name=request.form['league_name'],
+        )
+    return render_template('admin.html', names=teams)

@@ -7,48 +7,79 @@
 
 <div class="league">
 
-{# This is the fixtures#}
     <div class="fixtures">
-    <h1>Upcoming Fixtures</h1>
-        <div class="fixture-container">
-            {% for fixture in fixtures %}
-                {% if fixture.result %}
-            <span style="color: green;">✔ Result available</span>
-                {% else %}
-                    <span style="color: red;">✘ No result yet</span>
-                {% endif %}
-                <p class="date">{{ fixture.date.strftime('%A %B %Y') }}</p>
-                    <div class="fixture-container-2">
+        <h1>Upcoming Fixtures</h1>
+        <div class="menu">
+            <div class="dropdown">
+                <button class="dropbtn">Leagues</button>
+                  <div class="dropdown-content">
 
-                        <div class="fixture-container-clubs">
-                            <div class="fixture-container-clubs-2">
-                                <p>{{ fixture.team1.name }} </p>
-                                <img src="/static/assets/{{ fixture.team1.logo }}">
-                            </div>
+                      {% for league, _ in fixtures|groupby("league_name") %}
+                            <a href="#{{ league }}">{{ league }}</a>
+                      {% endfor %}
 
-                            <h1>{{ fixture.time.strftime('%H:%M %p') }}</h1>
-
-                            <div class="fixture-container-clubs-2">
-                                <img src="/static/assets/{{ fixture.team2.logo }}">
-                                <p>{{ fixture.team2.name }}</p>
-                            </div>
-                        </div>
-                        <p class="fixture-container-venue">🏟️{{ fixture.venue }}</p>
-
-                        <div class="fixture-matchlink">
-                            <a href="{{ url_for('main.matchdetails', fixture_id=fixture.id) }}">Match Details ➜</a>
-                        </div>
-                    </div>
-                {% endfor %}
-
-            {% if fixtures|length == 0 %}
-                <p>No fixtures scheduled.</p>
-            {% endif %}
+                  </div>
+            </div>
         </div>
+
+
+        {% if fixtures %}
+            {# --- Group fixtures by league --- #}
+            {% for league, league_fixtures in fixtures|groupby("league_name") %}
+
+                <div class="fixture-container" id="{{ league }}">
+                    <h2 class="league-title" style="text-align: center;">{{ league }}</h2>
+                    {% for fixture in league_fixtures %}
+
+                        {% if fixture.result %}
+                            <span style="color: green; text-align: left;">✔ Result available</span>
+                        {% else %}
+                            <span style="color: red;">✘ No result yet</span>
+                        {% endif %}
+
+                        <p class="date">
+                            {{ fixture.date.strftime('%A %B %Y') }}
+                        </p>
+
+                        <div class="fixture-container-2">
+
+                            <div class="fixture-container-clubs">
+
+                                <div class="fixture-container-clubs-2">
+                                    <p>{{ fixture.team1.name }}</p>
+                                    <img src="/static/assets/{{ fixture.team1.logo }}">
+                                </div>
+
+                                <h1>{{ fixture.time.strftime('%I:%M %p') }}</h1>
+
+                                <div class="fixture-container-clubs-2">
+                                    <img src="/static/assets/{{ fixture.team2.logo }}">
+                                    <p>{{ fixture.team2.name }}</p>
+                                </div>
+
+                            </div>
+
+                            <p class="fixture-container-venue">🏟️ {{ fixture.venue }}</p>
+
+                            <div class="fixture-matchlink">
+                                <a href="{{ url_for('main.matchdetails', fixture_id=fixture.id) }}">
+                                    Match Details ➜
+                                </a>
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+            <p>No fixtures scheduled.</p>
+        {% endif %}
+
     </div>
-
-{#===============================================================================#}
-
-
 </div>
+
 {% endblock %}

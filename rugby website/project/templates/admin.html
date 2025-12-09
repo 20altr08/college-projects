@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Enter Text</h1>
+
+    <form method="POST">
+      <label for="cars">Choose a car:</label>
+      <select name="teams" id="teams">
+          {% for name in names %}
+              <option value="{{ name }}">{{ name.name }}</option>
+          {% endfor %}
+      </select>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <form method="POST">
+        <input type="text" name="user_text" placeholder="Type something..." required>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
