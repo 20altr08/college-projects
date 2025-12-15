@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Blueprint, request, redirect, url_for, session
+from flask import Flask, render_template, Blueprint, request, redirect, url_for, session, flash
 from .models import Team, Fixtures, Results
 from datetime import datetime
 from datetime import date, time
@@ -54,16 +54,29 @@ def profile():
 
 @main.route("/admin", methods=["GET", "POST"])
 def admin():
-    teams = Team.query.all()  # returns full objects
+    teams = Team.query.all()
 
     if request.method == "POST":
-        # Get text from form
         fixture = Fixtures(
-            venue=request.form['venue'],
-            date=request.form['date'],
-            time=request.form['time'],
-            team1_id=request.form['team1'],
-            team2_id=request.form['team2'],
-            league_name=request.form['league_name'],
+            venue=request.form.get("venue"),
+            date=datetime.strptime(
+                request.form.get("date"), "%Y-%m-%d"
+            ).date(),
+            time=datetime.strptime(
+                request.form.get("time"), "%H:%M"
+            ).time(),
+            team1_id=int(request.form.get("team1")),
+            team2_id=int(request.form.get("team2")),
+            league_name=request.form.get("league_name"),
         )
-    return render_template('admin.html', names=teams)
+
+        if request.form.get("team1") == request.form.get("team2"):
+            flash("A team cannot play itself", "error")
+            return redirect(url_for("main.admin"))
+
+        db.session.add(fixture)
+        db.session.commit()
+
+        return redirect(url_for("main.admin"))
+
+    return render_template("admin.html", names=teams)

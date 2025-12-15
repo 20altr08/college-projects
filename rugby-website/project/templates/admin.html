@@ -1,26 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
-</head>
-<body>
-    <h1>Enter Text</h1>
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
 
-    <form method="POST">
-      <label for="cars">Choose a car:</label>
-      <select name="teams" id="teams">
-          {% for name in names %}
-              <option value="{{ name }}">{{ name.name }}</option>
-          {% endfor %}
-      </select>
-      <br><br>
-      <input type="submit" value="Submit">
-    </form>
+{% block content %}
 
-    <form method="POST">
-        <input type="text" name="user_text" placeholder="Type something..." required>
-        <button type="submit">Save</button>
-    </form>
-</body>
-</html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <div class="admin">
+        <h1>Admin Dashboard</h1>
+
+        <div class="flash">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        </div>
+
+
+        <form method="POST" class="form">
+
+            <div class="form-box">
+                <label>Venue</label>
+                <input type="text" name="venue" required>
+            </div>
+
+            <div class="form-box">
+                <label>Date</label>
+            <input type="date" name="date" required>
+            </div>
+
+            <div class="form-box">
+            <label>Time</label>
+            <input type="time" name="time" required>
+            </div>
+
+            <div class="form-box">
+                <label>Team 1</label>
+                <select name="team1" required>
+                    {% for team in names %}
+                        <option value="{{ team.id }}">{{ team.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+
+            <div class="form-box">
+                <label>Team 2</label>
+                <select name="team2" required>
+                    {% for team in names %}
+                        <option value="{{ team.id }}">{{ team.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+        <div class="form-box">
+            <label>League Name</label>
+            <input type="text" name="league_name" required>
+        </div>
+
+        <button type="submit">Create Fixture</button>
+        </form>
+    </div>
+{% endblock %}
