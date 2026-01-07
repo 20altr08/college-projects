@@ -53,7 +53,7 @@ def profile():
     return render_template('profile.html')
 
 @main.route('/feedback')
-def profile():
+def feedback():
     return render_template('feedback.html')
 
 @main.route("/admin", methods=["GET", "POST"])
