@@ -52,6 +52,10 @@ def archive():
 def profile():
     return render_template('profile.html')
 
+@main.route('/feedback')
+def profile():
+    return render_template('feedback.html')
+
 @main.route("/admin", methods=["GET", "POST"])
 def admin():
     teams = Team.query.all()

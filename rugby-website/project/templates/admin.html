@@ -66,4 +66,12 @@
         <button type="submit">Create Fixture</button>
         </form>
     </div>
+
+    <div>
+    <select name="team2" required>
+        {% for fixture in fixtures %}
+            <option value="{{ fixtures.id }}">{{ fixtures.team1_id }}</option>
+        {% endfor %}
+    </select>
+    </div>
 {% endblock %}
